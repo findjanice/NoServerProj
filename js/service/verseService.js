@@ -21,7 +21,8 @@ app.service('verseService', function() {
     topic: 'Wisdom',
     verseId: 'If any of you lacks wisdom, let him ask of God, who gives to all liberally and without reproach, and it will be given to him',
     reference: 'James 1:5'
-  }]; //end of verse array
+  }];
+  //end of verse array
 
   this.verseGet = function() {
     return verses;

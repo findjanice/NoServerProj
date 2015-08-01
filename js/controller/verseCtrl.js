@@ -5,4 +5,6 @@ app.controller('verseCtrl', function($scope, verseService, $routeParams) {
     console.log($scope.verses);
   };
   $scope.verseGet();
+
+  // end controller
 });
