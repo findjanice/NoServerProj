@@ -1,0 +1,17 @@
+<div>
+Verses
+<br>
+<!-- this selects the verse -->
+  <select ng-model="verseGet" ng-options="verse.reference group by verse.topic for verse in verses">
+    <option value="">Select a Verse</option>
+  </select>
+  <div>
+    <br>
+    {{verseGet.verseId}} - {{verseGet.reference}}
+    <br>
+      </div>
+    <!-- end of verse selection -->
+
+  <hr>
+  Memorize
+</div>
