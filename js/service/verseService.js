@@ -28,6 +28,14 @@ app.service('verseService', function() {
     return verses;
   };
 
+  this.verseAdd = function() {
+    //add from the dropdown list
+  }
+
+  this.versePost = function() {
+    //post to memorize
+  }
+
   //end of verseService
 
 });

@@ -1,14 +1,20 @@
 <div>
-Verses:
+Select Verse:
 <br>
 <!-- this selects the verse -->
-  <select ng-model="verseGet" ng-options="verse.reference group by verse.topic for verse in verses">
+  <select ng-model="verseGet" ng-options="verse.reference group by verse.topic for verse in verses" ng-change="">
     <option value="">Select a Verse</option>
   </select>
   <div>
     <br>
-    {{verseGet.verseId}} - {{verseGet.reference}}
+    <div>
+
+    {{verseGet.verseId}} - {{verseGet.reference}}<button type="submit" ng-click="">Add</button><button type="submit" ng-click="">Reset</button></div>
     <br>
+    <br>
+      </div>
+      <div input="text"><button type="submit" ng-click="">Add</button>
+
       </div>
     <!-- end of verse selection -->
 
