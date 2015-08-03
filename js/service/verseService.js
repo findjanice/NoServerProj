@@ -1,4 +1,4 @@
-app.service('verseService', function() {
+app.service('verseService', function($http, $q) {
 
   var verses = [{
     topic: 'Love',
@@ -28,9 +28,35 @@ app.service('verseService', function() {
     return verses;
   };
 
+  var toMemorizeArr = [];
 
-  this.versePost = function() {
-    //post to memorize
+  this.memorizeArr = function() {
+    return toMemorizeArr;
+  }
+
+  this.addToMemArr = function(verseGet) {
+    toMemorizeArr.push({
+      theVerse: verseGet
+    });
+    verseGet = {
+      verseid: 'not in list',
+      reference: ''
+    };
+    console.log(toMemorizeArr);
+    return toMemorizeArr;
+  };
+
+  this.typeToMemArr = function(typeVerse) {
+    toMemorizeArr.push({
+      theTypeVerse: typeVerse
+    })
+    console.log(toMemorizeArr);
+    return toMemorizeArr;
+  };
+
+
+  this.totalToMemorize = function() {
+    return toMemorizeArr.length;
   }
 
   //end of verseService

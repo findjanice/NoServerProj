@@ -6,6 +6,10 @@ app.config(function($routeProvider) {
       templateUrl: 'js/template/home.html',
       controller: 'verseCtrl'
     })
+    .when('memorize', {
+      templateUrl: 'js/template/memorize.html',
+      controller: 'memorizeCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     })
