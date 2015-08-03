@@ -1,5 +1,5 @@
 <div>
-Verses:
+Select a Verse:
 <br>
 <!-- this selects the verse -->
   <select ng-model="verseGet" ng-options="verse.reference group by verse.topic for verse in verses">
@@ -7,16 +7,25 @@ Verses:
   </select>
   <div>
     <br>
-    {{verseGet.verseId}} - {{verseGet.reference}}<button type="submit" ng-click="addToMemArr()">Add</button><button type="submit" ng-click="verseGet = {verseid:'not in list', reference: ''}">Reset</button>
+    {{verseGet.verseId}}  {{verseGet.reference}}<button type="submit" ng-click="addToMemArr()">Add</button><button type="submit" ng-click="verseGet = {verseid:'not in list', reference: ''}">Reset</button>
     <br>
     <br>
       </div>
     <!-- end of verse selection -->
+  Enter a Verse
+
+<input type = "text" placeholder="Type in your Verse..." ng-model="typeVerse"><button type="submit" ng-click="typeToMemArr()">Add</button>
+
 
   <hr>
     Memorize:
+    <br>
+    # of Verse to Memorize: {{totalToMemorize()}}
   <div ng-repeat="myVerse in toMemorizeArr">
-   {{myVerse.theVerse.verseId}} - {{myVerse.theVerse.reference}}
+   {{myVerse.theVerse.verseId}} {{myVerse.theVerse.reference}}  {{myVerse.theTypeVerse}} <button type="submit" ng-click="">Memorized</button><button type="submit" ng-click="toDeleteMem($index)">Delete</button>
+
+  </div>
+
   </div>
 
 </div>

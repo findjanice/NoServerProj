@@ -17,8 +17,22 @@ app.controller('verseCtrl', function($scope, verseService, $routeParams) {
       reference: ''
     };
     console.log($scope.toMemorizeArr);
-
   };
+  $scope.typeToMemArr = function() {
+    $scope.toMemorizeArr.push({
+      theTypeVerse: $scope.typeVerse
+    })
+    $scope.typeVerse = '';
+  }
+
+  $scope.totalToMemorize = function() {
+    return $scope.toMemorizeArr.length;
+  }
+
+  $scope.toDeleteMem = function(index) {
+    console.log(index);
+    $scope.toMemorizeArr.splice(index, 1);
+  }
 
 
 
