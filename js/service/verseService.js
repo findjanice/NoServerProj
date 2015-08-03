@@ -27,10 +27,13 @@ app.service('verseService', function() {
   this.verseGet = function() {
     return verses;
   };
-
-  this.verseAdd = function() {
-    //add from the dropdown list
-  }
+  // var verseArray = [];
+  // var verseMemorized = [];
+  // this.verseAdd = function(selectedVerse) {
+  //   this.selectedVerse = verses.verseid + verses.reference;
+  //   verseArray.push(this.selectedVerse);
+  //   //add from the dropdown list
+  // };
 
   this.versePost = function() {
     //post to memorize

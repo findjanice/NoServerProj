@@ -1,23 +1,22 @@
 <div>
-Select Verse:
+Verses:
 <br>
 <!-- this selects the verse -->
-  <select ng-model="verseGet" ng-options="verse.reference group by verse.topic for verse in verses" ng-change="">
+  <select ng-model="verseGet" ng-options="verse.reference group by verse.topic for verse in verses">
     <option value="">Select a Verse</option>
   </select>
   <div>
     <br>
-    <div>
-
-    {{verseGet.verseId}} - {{verseGet.reference}}<button type="submit" ng-click="">Add</button><button type="submit" ng-click="">Reset</button></div>
+    {{verseGet.verseId}} - {{verseGet.reference}}<button type="submit" ng-click="addToMemArr()">Add</button><button type="submit" ng-click="verseGet = {verseid:'not in list', reference: ''}">Reset</button>
     <br>
     <br>
-      </div>
-      <div input="text"><button type="submit" ng-click="">Add</button>
-
       </div>
     <!-- end of verse selection -->
 
   <hr>
-  Memorize:
+    Memorize:
+  <div ng-repeat="myVerse in toMemorizeArr">
+   {{myVerse.theVerse.verseId}} - {{myVerse.theVerse.reference}}
+  </div>
+
 </div>
