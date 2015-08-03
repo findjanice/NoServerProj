@@ -59,6 +59,10 @@ app.service('verseService', function($http, $q) {
     return toMemorizeArr.length;
   }
 
+  this.toDeleteMem = function(index) {
+    toMemorizeArr.splice(index, 1);
+  }
+
   //end of verseService
 
 });

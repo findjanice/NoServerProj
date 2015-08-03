@@ -19,11 +19,11 @@ Select a Verse:
 
 
   <hr>
-    Memorize:
-    <br>
-    # of Verse to Memorize: {{totalToMemorize()}}
-  <div ng-repeat="myVerse in toMemorizeArr">
-   {{myVerse.theVerse.verseId}} {{myVerse.theVerse.reference}}  {{myVerse.theTypeVerse}} <button type="submit" ng-click="">Memorized</button><button type="submit" ng-click="toDeleteMem($index)">Delete</button>
+  Memorize:
+  <br>
+  # of Verse to Memorize: {{totalToMemorize()}}
+<div ng-repeat="myVerse in toMemorizeArr">
+ {{myVerse.theVerse.verseId}} {{myVerse.theVerse.reference}}  {{myVerse.theTypeVerse}} <button type="submit" ng-click="">Memorized</button><button type="submit" ng-click="toDeleteMem($index)">Delete</button>
 
   </div>
 

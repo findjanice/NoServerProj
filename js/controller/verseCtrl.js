@@ -14,10 +14,10 @@ app.controller('verseCtrl', function($scope, verseService, $routeParams) {
   }
 
   $scope.typeToMemArr = function(data) {
+    console.log(data);
     verseService.typeToMemArr(data);
     $scope.typeVerse = '';
   }
-
 
   $scope.memorizeArr = function() {
     $scope.toMemorizeArr = verseService.memorizeArr();
@@ -25,11 +25,12 @@ app.controller('verseCtrl', function($scope, verseService, $routeParams) {
   $scope.memorizeArr();
 
   $scope.totalToMemorize = function() {
+    return $scope.toMemorizeArr.length;
     verseService.totalToMemorize();
   }
 
   $scope.toDeleteMem = function(index) {
-    verseService.toDeleteMem();
+    verseService.toDeleteMem(index);
   }
 
   // $scope.addToMemArr = function() {
