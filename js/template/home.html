@@ -23,7 +23,7 @@ Select a Verse:
   <br>
   # of Verse to Memorize: {{totalToMemorize()}}
 <div ng-repeat="myVerse in toMemorizeArr">
- {{myVerse.theVerse.verseId}} {{myVerse.theVerse.reference}}  {{myVerse.theTypeVerse}} <button type="submit" ng-click="">Memorized</button><button type="submit" ng-click="toDeleteMem($index)">Delete</button>
+ {{myVerse.theVerse.verseId}} {{myVerse.theVerse.reference}}  {{myVerse.theTypeVerse}} <button type="submit" ng-click="postToMemorize($index)">Memorized</button><button type="submit" ng-click="toDeleteMem($index)">Delete</button>
 
   </div>
 

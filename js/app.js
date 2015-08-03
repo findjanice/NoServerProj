@@ -2,16 +2,16 @@ var app = angular.module('memoryApp', ['ngRoute']);
 
 app.config(function($routeProvider) {
   $routeProvider
-    .when('/', {
+    .when('/home', {
       templateUrl: 'js/template/home.html',
       controller: 'verseCtrl'
     })
-    .when('memorize', {
+    .when('/:memorized', {
       templateUrl: 'js/template/memorize.html',
-      controller: 'memorizeCtrl'
+      controller: 'memrzCtrl'
     })
     .otherwise({
-      redirectTo: '/'
+      redirectTo: '/home'
     })
 
   //end of config

@@ -42,7 +42,6 @@ app.service('verseService', function($http, $q) {
       verseid: 'not in list',
       reference: ''
     };
-    console.log(toMemorizeArr);
     return toMemorizeArr;
   };
 
@@ -50,10 +49,8 @@ app.service('verseService', function($http, $q) {
     toMemorizeArr.push({
       theTypeVerse: typeVerse
     })
-    console.log(toMemorizeArr);
     return toMemorizeArr;
   };
-
 
   this.totalToMemorize = function() {
     return toMemorizeArr.length;
@@ -61,6 +58,22 @@ app.service('verseService', function($http, $q) {
 
   this.toDeleteMem = function(index) {
     toMemorizeArr.splice(index, 1);
+  }
+
+  var memorizedArr = [];
+
+  this.memorized = function() {
+    return memorizedArr;
+  }
+
+  this.postToMemorize = function(index) {
+    memorizedArr.push(toMemorizeArr[index]);
+    toMemorizeArr.splice(index, 1);
+    console.log(memorizedArr);
+  };
+
+  this.totalMemorized = function() {
+    return memorizedArr.length;
   }
 
   //end of verseService

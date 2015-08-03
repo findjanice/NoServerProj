@@ -2,22 +2,19 @@ app.controller('verseCtrl', function($scope, verseService, $routeParams) {
 
   $scope.verseGet = function() {
     $scope.verses = verseService.verseGet();
-    console.log($scope.verses);
   };
   $scope.verseGet();
-
-  //end of verseGet
 
   $scope.addToMemArr = function(data) {
     console.log(data);
     verseService.addToMemArr(data);
-  }
+  };
 
   $scope.typeToMemArr = function(data) {
     console.log(data);
     verseService.typeToMemArr(data);
     $scope.typeVerse = '';
-  }
+  };
 
   $scope.memorizeArr = function() {
     $scope.toMemorizeArr = verseService.memorizeArr();
@@ -26,39 +23,16 @@ app.controller('verseCtrl', function($scope, verseService, $routeParams) {
 
   $scope.totalToMemorize = function() {
     return $scope.toMemorizeArr.length;
-    verseService.totalToMemorize();
-  }
+    $scope.toMemorizeArr = verseService.totalToMemorize();
+  };
+
 
   $scope.toDeleteMem = function(index) {
     verseService.toDeleteMem(index);
-  }
+  };
 
-  // $scope.addToMemArr = function() {
-  //   $scope.toMemorizeArr.push({
-  //     theVerse: $scope.verseGet
-  //   });
-  //   $scope.verseGet = {
-  //     verseid: 'not in list',
-  //     reference: ''
-  //   };
-  //   console.log($scope.toMemorizeArr);
-  // };
-  // $scope.typeToMemArr = function() {
-  //   $scope.toMemorizeArr.push({
-  //     theTypeVerse: $scope.typeVerse
-  //   })
-  //   $scope.typeVerse = '';
-  // }
-  // $scope.totalToMemorize = function() {
-  //   return $scope.toMemorizeArr.length;
-  // }
-  //
-  // $scope.toDeleteMem = function() {
-  //   console.log(index);
-  //   $scope.toMemorizeArr.splice(index, 1);
-  // }
-
-
-
+  $scope.postToMemorize = function(index) {
+    verseService.postToMemorize(index);
+  };
   // end controller
 });
