@@ -6,6 +6,10 @@ app.config(function($routeProvider) {
       templateUrl: 'js/template/home.html',
       controller: 'verseCtrl'
     })
+    // .when('/home', {
+    //   templateUrl: 'js/template/home.html',
+    //   controller: 'dashboardCtrl'
+    // })
     .when('/:memorized', {
       templateUrl: 'js/template/memorize.html',
       controller: 'memrzCtrl'

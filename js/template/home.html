@@ -26,7 +26,7 @@ Select a Verse:
  {{myVerse.theVerse.verseId}} {{myVerse.theVerse.reference}}  {{myVerse.theTypeVerse}}
  <br>
  <input type = "text" placeholder="Type from Memory..." ng-model="typeMemVerse">
- <button type="submit" ng-click="postToMemorize($index)">Memorized</button><button type="submit" ng-click="toDeleteMem($index)">Delete</button>
+ <button type="submit" ng-click="checkMemorized(typeMemVerse, $index)">Memorized</button><button type="submit" ng-click="toDeleteMem($index)">Delete</button>
 
   </div>
 

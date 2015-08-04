@@ -11,7 +11,7 @@ app.controller('verseCtrl', function($scope, verseService, $routeParams) {
 
   $scope.typeToMemArr = function(data) {
     verseService.typeToMemArr(data);
-    // $scope.typeVerse = '';
+    $scope.typeVerse = '';
   };
 
   $scope.memorizeArr = function() {
@@ -29,8 +29,12 @@ app.controller('verseCtrl', function($scope, verseService, $routeParams) {
     verseService.toDeleteMem(index);
   };
 
-  $scope.postToMemorize = function(index) {
-    verseService.postToMemorize(index);
-  };
+  $scope.checkMemorized = function(data, index) {
+    verseService.checkMemorized(data, index);
+  }
+
+  // $scope.postToMemorize = function(index) {
+  //   verseService.postToMemorize(index);
+  // };
   // end controller
 });

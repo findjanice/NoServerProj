@@ -63,14 +63,28 @@ app.service('verseService', function($http, $q) {
   var memorizedArr = [];
 
   this.memorized = function() {
-    return memorizedArr;
-  }
+      return memorizedArr;
+    }
+    // adding checkmemorized
 
-  this.postToMemorize = function(index) {
-    memorizedArr.push(toMemorizeArr[index]);
-    toMemorizeArr.splice(index, 1);
-
+  this.checkMemorized = function(data, index) {
+    for (var i = 0; i < toMemorizeArr.length; i++) {
+      if (toMemorizeArr[i].theTypeVerse === data) {
+        memorizedArr.push(toMemorizeArr[index]);
+        toMemorizeArr.splice(index, 1);
+      } else {
+        var msg = "Wrong input, please try again."
+        alert(msg);
+      }
+    }
   };
+
+  // end adding
+  // this.postToMemorize = function(index) {
+  //   memorizedArr.push(toMemorizeArr[index]);
+  //   toMemorizeArr.splice(index, 1);
+  //
+  // };
 
   this.totalMemorized = function() {
     return memorizedArr.length;
