@@ -69,7 +69,7 @@ app.service('verseService', function($http, $q) {
   this.postToMemorize = function(index) {
     memorizedArr.push(toMemorizeArr[index]);
     toMemorizeArr.splice(index, 1);
-    console.log(memorizedArr);
+
   };
 
   this.totalMemorized = function() {

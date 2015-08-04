@@ -10,9 +10,10 @@ app.controller('memrzCtrl', function($scope, verseService, $routeParams) {
   };
 
   $scope.totalMemorized = function() {
-      $scope.memorizedArr.length;
-      verseService.totalMemorized();
+    return $scope.memorizedArr.length;
+    verseService.totalMemorized();
+  }
 
-    }
-    //end controller
+
+  //end controller
 })

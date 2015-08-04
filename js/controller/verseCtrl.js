@@ -6,14 +6,12 @@ app.controller('verseCtrl', function($scope, verseService, $routeParams) {
   $scope.verseGet();
 
   $scope.addToMemArr = function(data) {
-    console.log(data);
     verseService.addToMemArr(data);
   };
 
   $scope.typeToMemArr = function(data) {
-    console.log(data);
     verseService.typeToMemArr(data);
-    $scope.typeVerse = '';
+    // $scope.typeVerse = '';
   };
 
   $scope.memorizeArr = function() {
