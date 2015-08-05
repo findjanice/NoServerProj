@@ -1,12 +1,14 @@
-app.controller('verseCtrl', function($scope, verseService, $routeParams) {
+app.controller('verseCtrl', function($scope, verseService, $routeParams, $modal,
+  $log) {
 
   $scope.verseGet = function() {
     $scope.verses = verseService.verseGet();
   };
   $scope.verseGet();
 
-  $scope.addToMemArr = function(data) {
-    verseService.addToMemArr(data);
+  $scope.addToMemArr = function() {
+    console.log($scope.typeVerse);
+    verseService.addToMemArr($scope.typeVerse);
   };
 
   $scope.typeToMemArr = function(data) {
@@ -16,6 +18,7 @@ app.controller('verseCtrl', function($scope, verseService, $routeParams) {
 
   $scope.memorizeArr = function() {
     $scope.toMemorizeArr = verseService.memorizeArr();
+    console.log('this is memorizeArr', $scope.toMemorizeArr);
   };
   $scope.memorizeArr();
 
@@ -29,12 +32,48 @@ app.controller('verseCtrl', function($scope, verseService, $routeParams) {
     verseService.toDeleteMem(index);
   };
 
-  $scope.checkMemorized = function(data, index) {
-    verseService.checkMemorized(data, index);
-  }
+  //testing Modal
 
-  // $scope.postToMemorize = function(index) {
-  //   verseService.postToMemorize(index);
-  // };
+  $scope.animationsEnabled = true;
+
+  // var currentIndex;
+
+  $scope.open = function(size, index, myVerse) {
+    console.log(index);
+    console.log('this is myVerse', myVerse);
+    var vm = this;
+    vm.currentIndex = index;
+    vm.myVerse = myVerse;
+
+    var modalInstance = $modal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'js/template/memcheck.html',
+      controller: 'memCheckCtrl',
+      controllerAs: 'vm',
+      size: size,
+      resolve: {
+        index: function() {
+          return vm.currentIndex;
+        },
+        verse: function() {
+          return vm.myVerse;
+        },
+      }
+    });
+
+    modalInstance.result.then(function(verse) {
+        console.log('this is in then', verse);
+      },
+      function() {
+        $log.info('Modal dismissed at: ' + new Date());
+      });
+
+    //closes the open function
+  };
+
+  $scope.toggleAnimation = function() {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+
   // end controller
 });

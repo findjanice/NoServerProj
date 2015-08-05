@@ -1,4 +1,4 @@
-var app = angular.module('memoryApp', ['ngRoute']);
+var app = angular.module('memoryApp', ['ngRoute', 'ui.bootstrap']);
 
 app.config(function($routeProvider) {
   $routeProvider
@@ -6,10 +6,10 @@ app.config(function($routeProvider) {
       templateUrl: 'js/template/home.html',
       controller: 'verseCtrl'
     })
-    // .when('/home', {
-    //   templateUrl: 'js/template/home.html',
-    //   controller: 'dashboardCtrl'
-    // })
+    .when('/dashboard', {
+      templateUrl: 'js/template/dashboard.html',
+      controller: 'dashboardCtrl'
+    })
     .when('/:memorized', {
       templateUrl: 'js/template/memorize.html',
       controller: 'memrzCtrl'

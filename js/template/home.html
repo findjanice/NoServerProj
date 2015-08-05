@@ -25,8 +25,8 @@ Select a Verse:
 <div ng-repeat="myVerse in toMemorizeArr">
  {{myVerse.theVerse.verseId}} {{myVerse.theVerse.reference}}  {{myVerse.theTypeVerse}}
  <br>
- <input type = "text" placeholder="Type from Memory..." ng-model="typeMemVerse">
- <button type="submit" ng-click="checkMemorized(typeMemVerse, $index)">Memorized</button><button type="submit" ng-click="toDeleteMem($index)">Delete</button>
+
+ <button type="submit" ng-click="open(lg, $index, myVerse.theTypeVerse)">Memorized</button><button type="submit" ng-click="toDeleteMem($index)">Delete</button>
 
   </div>
 

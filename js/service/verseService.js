@@ -24,11 +24,14 @@ app.service('verseService', function($http, $q) {
   }];
   //end of verse array
 
+
+
   this.verseGet = function() {
     return verses;
   };
 
   var toMemorizeArr = [];
+
 
   this.memorizeArr = function() {
     return toMemorizeArr;
@@ -49,6 +52,7 @@ app.service('verseService', function($http, $q) {
     toMemorizeArr.push({
       theTypeVerse: typeVerse
     })
+    console.log('this is type', toMemorizeArr)
     return toMemorizeArr;
   };
 
@@ -68,14 +72,9 @@ app.service('verseService', function($http, $q) {
     // adding checkmemorized
 
   this.checkMemorized = function(data, index) {
-    for (var i = 0; i < toMemorizeArr.length; i++) {
-      if (toMemorizeArr[i].theTypeVerse === data) {
-        memorizedArr.push(toMemorizeArr[index]);
-        toMemorizeArr.splice(index, 1);
-      } else {
-        var msg = "Wrong input, please try again."
-        alert(msg);
-      }
+    if (toMemorizeArr[index] === data) {
+      memorizedArr.push(toMemorizeArr[index]);
+      toMemorizeArr.splice(index, 1);
     }
   };
 
@@ -87,9 +86,19 @@ app.service('verseService', function($http, $q) {
   // };
 
   this.totalMemorized = function() {
-    return memorizedArr.length;
-  }
+      return memorizedArr.length;
+    }
+    //end of verseService
 
-  //end of verseService
+  this.ok = function(data, index) {
+    console.log('service', toMemorizeArr[index].theTypeVerse, data);
+    if (toMemorizeArr[index].theTypeVerse === data) {
+      memorizedArr.push(toMemorizeArr[index]);
+      toMemorizeArr.splice(index, 1);
+    }
+    // else if (toMemorizeArr[index].theTypeVerse != data) {
+    //   alert("wrong input");
+    // }
+  };
 
 });
