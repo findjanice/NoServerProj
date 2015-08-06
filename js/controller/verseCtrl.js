@@ -60,11 +60,11 @@ app.controller('verseCtrl', function($scope, verseService, $routeParams, $modal,
 
   $scope.open = function(size, index, myVerse) {
     console.log(index);
-    console.log('this is myVerse', myVerse);
+
     var vm = this;
     vm.currentIndex = index;
     vm.myVerse = myVerse;
-
+    console.log('this is myVerse', vm.myVerse);
     var modalInstance = $modal.open({
       animation: $scope.animationsEnabled,
       templateUrl: 'js/template/memcheck.html',
@@ -82,7 +82,7 @@ app.controller('verseCtrl', function($scope, verseService, $routeParams, $modal,
     });
 
     modalInstance.result.then(function(verse) {
-        console.log('this is in then', verse);
+        $log.info('Modal done at: ' + new Date());
       },
       function() {
         $log.info('Modal dismissed at: ' + new Date());

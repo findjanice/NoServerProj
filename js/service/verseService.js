@@ -40,12 +40,16 @@ app.service('verseService', function($http, $q, fb) {
 
   this.addToMemArr = function(verseGet) {
     toMemorizeArr.push({
-      theVerse: verseGet
+      reference: verseGet.reference,
+      topic: verseGet.topic,
+      date: new Date()
     });
+    console.log('this is to memorize', toMemorizeArr);
     verseGet = {
       verseid: 'not in list',
       reference: ''
     };
+
     return toMemorizeArr;
   };
 
@@ -95,8 +99,14 @@ app.service('verseService', function($http, $q, fb) {
     console.log('service', toMemorizeArr[index].reference,
       data);
     if (toMemorizeArr[index].reference === data) {
-      memorizedArr.unshift(toMemorizeArr[index]);
+      memorizedArr.unshift({
+        topic: toMemorizeArr[index].topic,
+        reference: toMemorizeArr[index].reference,
+        date: new Date()
+      });
+
       toMemorizeArr.splice(index, 1);
+      console.log(memorizedArr);
     }
   };
 
