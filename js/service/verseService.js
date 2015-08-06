@@ -84,10 +84,11 @@ app.service('verseService', function($http, $q, fb) {
   }
 
   this.ok = function(data, index) {
-    console.log('service', toMemorizeArr[index].theTypeVerse, data);
-    if (toMemorizeArr[index].theTypeVerse === data) {
+    console.log('service', toMemorizeArr[index].theTypeVerse.reference,
+      data);
+    if (toMemorizeArr[index].theTypeVerse.reference === data) {
       memorizedArr.push(toMemorizeArr[index]);
-      // toMemorizeArr.splice(index, 1);
+      toMemorizeArr.splice(index, 1);
     }
   };
 

@@ -20,9 +20,9 @@
 <h4 class="navbar-text navbar-left">Enter Text</h4>
 <form class="navbar-form navbar-left">
 <div class="form-group">
-  <input type = "text" class="form-control" placeholder="Topic" ng-model="typeVerse">
+  <input type = "text" class="form-control" placeholder="Topic" ng-model="typeVerse.topic">
   </div>
-<input type = "text" class="form-control" placeholder="Type in your Text..." ng-model="typeVerse">
+<input type = "text" class="form-control" placeholder="Type in your Text..." ng-model="typeVerse.reference">
 
 <button type="submit" class="btn btn-default" ng-click="typeToMemArr(typeVerse)">Add</button>
 </form>
@@ -42,22 +42,18 @@
 
   <h4>Text Repository</h4>
   <div class = "row">
-
-
-  <br>
 <verse-list>
 <div ng-repeat="myVerse in toMemorizeArr">
- <!-- {{myVerse.theVerse.verseId}} {{myVerse.theVerse.reference}}   -->
- <!-- {{myVerse.theTypeVerse}} -->
-
  <br>
 <div ng-hide="editorEnabled">
-  {{myVerse.theTypeVerse}}
+  <h5>{{myVerse.theTypeVerse.topic}} </h5>
+  <p>
+{{myVerse.theTypeVerse.reference}}</p>
 
  <button type="submit" class="btn btn-default" ng-click="open(lg, $index, myVerse.theTypeVerse)">Memorized</button><button type="submit" class="btn btn-default" ng-click="toDeleteMem($index)">Delete</button>
  <button class="btn btn-default" ng-click="editorEnabled=!editorEnabled">Edit</button></div>
  <div ng-show="editorEnabled">
-   <input ng-model="myVerse.theTypeVerse"><button ng-click="editorEnabled=!editorEnabled" class="btn btn-default">Done Editing</button>
+   <input ng-model="myVerse.theTypeVerse.reference"><button ng-click="editorEnabled=!editorEnabled" class="btn btn-default">Done Editing</button>
 </div>
 
 
