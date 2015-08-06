@@ -21,10 +21,10 @@ app.controller('verseCtrl', function($scope, verseService, $routeParams, $modal,
 
   $scope.editorEnabled = false;
 
-  $scope.verseGet = function() {
-    $scope.verses = verseService.verseGet();
-  };
-  $scope.verseGet();
+  // $scope.verseGet = function() {
+  //   $scope.verses = verseService.verseGet();
+  // };
+  // $scope.verseGet();
 
   // $scope.addToMemArr = function() {
   //   console.log($scope.typeVerse);

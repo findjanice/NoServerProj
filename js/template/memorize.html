@@ -1,9 +1,13 @@
-Memorized:
+<h3>Memorized</h3>
 <br>
-  # of Verse Memorized: {{totalMemorized()}}
+In Memory: {{totalMemorized()}}
 
 <div ng-model="postToMemorized" ng-repeat="memorized in memorizedArr">
 
-  {{memorized.theVerse.verseId}} {{memorized.theVerse.reference}} {{memorized.theTypeVerse}}
+<verse-list>
+ <h5>{{memorized.topic}}</h5>
+<p>
 
+{{memorized.reference}}</p>
+</verse-list>
 </div>
