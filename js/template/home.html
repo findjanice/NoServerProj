@@ -9,40 +9,55 @@
     <br>
       </div> -->
 <!-- end of verse selection -->
-<div class="container-fluid">
-  <div class="navbar-header">
-    <h4 class="navbar-text navbar-left">Enter Text</h4>
-    <form class="navbar-form navbar-left">
-      <div class="form-group">
+
+
+<div class="myHeading">
+  <h3>Memorization Collection</h3>
+  <span><p>
+    Never memorize something you can look up. - Albert Einstein
+  </p></span>
+</div>
+
+  <div class="row">
+
+<div>
+<div class="form-group" id="memlinks">
+<div class="col-xs-4 col-xs-offset-2">
+
         <input type="text" class="form-control" placeholder="Topic" ng-model="typeVerse.topic">
-      </div>
+</div>
+<div class="col-xs-5">
       <input type="text" class="form-control" placeholder="Type in your Text..." ng-model="typeVerse.reference">
-
-      <button type="submit" class="btn btn-default" ng-click="typeToMemArr(typeVerse)">Add</button>
-    </form>
-
-    <p class="navbar-text navbar-right">
-
-      Memorize: {{totalToMemorize()}} </p>
-    <!-- <input type = "text" placeholder="Type in your Verse..." ng-model="typeVerse"><button type="submit" ng-click="typeToMemArr(typeVerse)">Add</button> -->
+</div>
+<div class="col-xs-1">
+   <button type="submit" class="btn btn-default" ng-click="typeToMemArr(typeVerse)">Add to List</button>
+</div>
+</div>
   </div>
 </div>
+
 
 <!-- end of navbar -->
 <div>
   <br>
-  <h4>Text Repository</h4>
+
+  <p class="navbar-text navbar-right" id="tally">
+
+    Memorize: {{totalToMemorize()}} </p>
   <div class="row">
 
       <div ng-repeat="myVerse in toMemorizeArr">
         <br>
-        <div ng-hide="editorEnabled">
+
         <verse-list>
+
 
           <h5>{{myVerse.topic}} </h5>
           <!-- <p>
-            Date Added: {{myVerse.date}}</p>
+            Date Added: {{myVerse.date}}
           <p> -->
+          <div ng-hide="editorEnabled">
+
             {{myVerse.reference}}</p>
 
     <!-- buttons -->
@@ -54,7 +69,7 @@
     <button class="btn btn-default" ng-click="editorEnabled=!editorEnabled">Edit</button>
     </div>
     <div ng-show="editorEnabled">
-      <input ng-model="myVerse.theTypeVerse.reference">
+      <input ng-model="myVerse.reference">
       <button ng-click="editorEnabled=!editorEnabled" class="btn btn-default">Done Editing</button>
     </div>
 </verse-list>

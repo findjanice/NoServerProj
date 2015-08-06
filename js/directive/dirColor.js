@@ -1,7 +1,7 @@
 app.directive('dirColor', function() {
   return {
-    restrict: "EA",
-    scope: true,
+    restrict: "E",
+    transclude: true,
     template: '  '
   }
   //end of directive

@@ -12,7 +12,9 @@ app.controller('memCheckCtrl', function($scope, $modalInstance, index, verse,
       verseService.ok(verse, vm.index);
       $modalInstance.close($scope.typeMemVerse);
     } else if ($scope.typeMemVerse !== vm.verse) {
-      showy = false;
+      alert(
+        '  Oh noes! That was wrong. Please Try again or cancel and continue to memorize.'
+      );
     }
   };
 

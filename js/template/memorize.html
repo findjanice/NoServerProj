@@ -1,8 +1,15 @@
-<h3>Memorized</h3>
+<h3>Memorized : {{totalMemorized()}}</h3>
 <br>
-In Memory: {{totalMemorized()}}
 
-<div ng-model="postToMemorized" ng-repeat="memorized in memorizedArr">
+
+  <form class="navbar-form navbar-right">
+    <div class="form-group">
+<input ng-model="search.topic" class="form-control" placeholder="Search by Topic"> <input ng-model="search.reference" class="form-control" placeholder="Search by Reference"> </div>
+</div>
+</form>
+
+<div ng-model="postToMemorized" ng-repeat="memorized in memorizedArr | filter:search.topic | filter:search.reference">
+
 
 <verse-list>
  <h5>{{memorized.topic}}</h5>

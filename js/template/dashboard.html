@@ -1,29 +1,59 @@
-<h2>Hi! Janice</h2>
+<div class="myHeading">
 
-<h3>At a Glance</h3>
-<hr>
-<h4>Active:  {{totalToMemorize}}</h4>
-
-<h4>Memorized:  {{totalMemorized}}</h4>
-
-<br>
-
-<h3>Quick Add to Memorization List</h3>
-<br>
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Topic" ng-model="typeVerse.topic">
-  </div>
-  <input type="text" class="form-control" placeholder="Type in your Text..." ng-model="typeVerse.reference">
-
-  <button type="submit" class="btn btn-default" ng-click="typeToMemArr(typeVerse)">Add</button>
-</form>
-
-<h3>Memorization Tips!</h3>
-<div ng-model="list" ng-repeat="memoryTips in memoryTip">
-{{memoryTips}}
+  <h2>Hi Janice!</h2>
 </div>
 
-<h3>Thought for the Day</h3>
+<div class="row">
 
-{{quote}} - {{author}}
+<!-- first column -->
+
+  <div class="col-md-6">
+
+  <div class="box" id="glance">
+
+  <h3>At a Glance </h3>
+<hr>
+    <p id="glance">Active:  {{totalToMemorize}}<p>
+    <p id="glance">Memorized:  {{totalMemorized}}<p>
+
+  </div>
+
+  <div class="box" id="memorytips">
+
+    <h3>Memorization Tips!</h3>
+    <hr>
+    <div ng-model="list" ng-repeat="memoryTips in memoryTip">
+    {{memoryTips}}
+    </div>
+
+  </div>
+  </div>
+
+  <!-- second column -->
+    <div class="col-md-6">
+  <div class="box" id="quickAdd">
+
+
+      <h3>Quick Add to Memorization List</h3>
+      <hr>
+
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Topic" ng-model="typeVerse.topic">
+        </div>
+        <input type="text" class="form-control" placeholder="Type in your Text..." ng-model="typeVerse.reference">
+<br>
+        <button type="submit" class="btn btn-default" ng-click="typeToMemArr(typeVerse)">Add</button>
+
+  </div>
+
+  <div class="box" id="qod">
+        <h3>Thought for the Day</h3>
+<hr>
+        {{quote}} - <b>{{author}}</b>
+
+  </div>
+
+    </div>
+
+<!-- end of row div -->
 </div>

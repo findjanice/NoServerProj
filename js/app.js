@@ -7,6 +7,10 @@ app.constant('fb', {
 app.config(function($routeProvider) {
   $routeProvider
     .when('/home', {
+      templateUrl: 'js/template/dashboard.html',
+      controller: 'dashboardCtrl'
+    })
+    .when('/current', {
       templateUrl: 'js/template/home.html',
       controller: 'verseCtrl',
       resolve: {
@@ -14,10 +18,6 @@ app.config(function($routeProvider) {
           return verseService.refGetVerses();
         }
       }
-    })
-    .when('/dashboard', {
-      templateUrl: 'js/template/dashboard.html',
-      controller: 'dashboardCtrl'
     })
     .when('/memorized', {
       templateUrl: 'js/template/memorize.html',
