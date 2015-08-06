@@ -1,7 +1,8 @@
-// app.directive('verseList', function() {
-//   return {
-//     templateUrl: 'js/template/home.html',
-//   }
-//
-//   //end of directive
-// })
+app.directive('verseList', function() {
+  return {
+    restrict: "E",
+    transclude: true,
+    template: '<div class = "col-md-4"><ng-transclude></ng-transclude> </div> '
+  }
+  //end of directive
+})

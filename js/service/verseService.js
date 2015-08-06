@@ -1,4 +1,13 @@
-app.service('verseService', function($http, $q) {
+app.service('verseService', function($http, $q, fb) {
+
+  this.refGetVerses = function() {
+    return new Firebase(fb.url + '/home')
+  }
+  this.refgetMemorize = function() {
+    return new Firebase(fb.url + '/memorize')
+  }
+
+  //firebase
 
   var verses = [{
     topic: 'Love',
@@ -60,6 +69,10 @@ app.service('verseService', function($http, $q) {
     return toMemorizeArr.length;
   }
 
+  this.totalMemorized = function() {
+    return memorizedArr.length;
+  }
+
   this.toDeleteMem = function(index) {
     toMemorizeArr.splice(index, 1);
   }
@@ -67,38 +80,15 @@ app.service('verseService', function($http, $q) {
   var memorizedArr = [];
 
   this.memorized = function() {
-      return memorizedArr;
-    }
-    // adding checkmemorized
-
-  this.checkMemorized = function(data, index) {
-    if (toMemorizeArr[index] === data) {
-      memorizedArr.push(toMemorizeArr[index]);
-      toMemorizeArr.splice(index, 1);
-    }
-  };
-
-  // end adding
-  // this.postToMemorize = function(index) {
-  //   memorizedArr.push(toMemorizeArr[index]);
-  //   toMemorizeArr.splice(index, 1);
-  //
-  // };
-
-  this.totalMemorized = function() {
-      return memorizedArr.length;
-    }
-    //end of verseService
+    return memorizedArr;
+  }
 
   this.ok = function(data, index) {
     console.log('service', toMemorizeArr[index].theTypeVerse, data);
     if (toMemorizeArr[index].theTypeVerse === data) {
       memorizedArr.push(toMemorizeArr[index]);
-      toMemorizeArr.splice(index, 1);
+      // toMemorizeArr.splice(index, 1);
     }
-    // else if (toMemorizeArr[index].theTypeVerse != data) {
-    //   alert("wrong input");
-    // }
   };
 
 });

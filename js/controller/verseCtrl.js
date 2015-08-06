@@ -1,15 +1,35 @@
 app.controller('verseCtrl', function($scope, verseService, $routeParams, $modal,
-  $log) {
+  $log, $firebaseArray, memRef) {
+
+  $scope.test = "Hello";
+  //adding Firebase
+  // var ref = new Firebase("https://firstapp-janice.firebaseio.com");
+  //
+  // var verses = $firebaseArray(memRef);
+  //
+  // verses.$loaded().then(function(verses) {
+  //   console.log(verses);
+  // })
+  //
+  // $scope.typeToMemArr = function(verse) {
+  //     verses.$add({
+  //       theTypeVerse: verse
+  //     });
+  //     $scope.typeVerse = '';
+  //   }
+  //end firebase
+
+  $scope.editorEnabled = false;
 
   $scope.verseGet = function() {
     $scope.verses = verseService.verseGet();
   };
   $scope.verseGet();
 
-  $scope.addToMemArr = function() {
-    console.log($scope.typeVerse);
-    verseService.addToMemArr($scope.typeVerse);
-  };
+  // $scope.addToMemArr = function() {
+  //   console.log($scope.typeVerse);
+  //   verseService.addToMemArr($scope.typeVerse);
+  // };
 
   $scope.typeToMemArr = function(data) {
     verseService.typeToMemArr(data);
@@ -68,7 +88,6 @@ app.controller('verseCtrl', function($scope, verseService, $routeParams, $modal,
         $log.info('Modal dismissed at: ' + new Date());
       });
 
-    //closes the open function
   };
 
   $scope.toggleAnimation = function() {

@@ -4,9 +4,6 @@ app.controller('memCheckCtrl', function($scope, $modalInstance, index, verse,
   var vm = this;
   vm.index = index;
   vm.verse = verse;
-  // $scope.postToMemorize = function(index) {
-  //   verseService.postToMemorize(index);
-  // };
 
   $scope.ok = function(verse, index) {
     console.log('this is in the controller', vm.verse, vm.index);
