@@ -7,4 +7,23 @@
 <h4>Memorized:  {{totalMemorized}}</h4>
 
 <br>
-{{test}}
+
+<h3>Quick Add to Memorization List</h3>
+<br>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Topic" ng-model="typeVerse.topic">
+  </div>
+  <input type="text" class="form-control" placeholder="Type in your Text..." ng-model="typeVerse.reference">
+
+  <button type="submit" class="btn btn-default" ng-click="typeToMemArr(typeVerse)">Add</button>
+</form>
+
+<h3>Memorization Tips!</h3>
+<div ng-model="list" ng-repeat="memoryTips in memoryTip">
+{{memoryTips}}
+</div>
+
+<h3>Thought for the Day</h3>
+
+{{quote}} - {{author}}
+</div>

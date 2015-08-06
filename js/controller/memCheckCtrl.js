@@ -6,13 +6,13 @@ app.controller('memCheckCtrl', function($scope, $modalInstance, index, verse,
   vm.verse = verse;
 
   $scope.ok = function(verse, index) {
-    console.log('this is in the controller', vm.verse, vm.index);
+    console.log('this is in the controller', verse, vm.index);
     console.log('this is the scope', $scope.typeMemVerse);
     if ($scope.typeMemVerse === vm.verse) {
       verseService.ok(verse, vm.index);
       $modalInstance.close($scope.typeMemVerse);
     } else if ($scope.typeMemVerse !== vm.verse) {
-      alert('That was wrong. Try again or go back and memorize.');
+      showy = false;
     }
   };
 

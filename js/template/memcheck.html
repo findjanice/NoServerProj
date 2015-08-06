@@ -5,6 +5,13 @@
         <div class="modal-body">
 <textarea id="textareaEdit" placeholder="You must type everything out exactly. Capitalization and punctuation counts!"  ng-model="typeMemVerse"></textarea>
             <br>
+          <div ng-model="showy" ng-show="wrong">
+            <br>
+            <p>
+              Oh noes! That was wrong. Please Try again or cancel and continue to memorize.
+            </p>
+          </div>
+
             <br>
         </div>
         <div class="modal-footer">
