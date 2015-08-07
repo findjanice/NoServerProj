@@ -37,11 +37,33 @@ app.service('verseService', function($http, $q, fb) {
   }];
   //end of verse array
 
-  console.log(toMemorizeArr);
+  var memorizedArr = [{
+    topic: 'Poetry',
+    reference: 'Two roads diverged in a wood, and I— I took the one less traveled by, And that has made all the difference. - Robert Frost',
+    date: "August 5, 2015"
 
+  }, {
+    topic: 'Inspiration',
+    reference: 'People will forget what you said, people will forget what you did, but people will never forget how you made them feel. - Maya Angelou',
+    date: "August 5, 2015"
+  }, {
+    topic: 'Angular JS',
+    reference: "Framework is the paradigm on how you organize your code.",
+    date: "August 4, 2015"
+  }, {
+    topic: 'Inspiration',
+    reference: 'The silence of the soul makes more distinct the voice of God. - Ellen White',
+    date: "August 2, 2015"
+  }, {
+    topic: 'Angular JS',
+    reference: 'Ng-click is a function that gets called when the user clicks',
+    date: "August 2, 2015"
 
-
-  // var toMemorizeArr = [];
+  }, {
+    topic: 'JQuery',
+    reference: 'JQuery is a DOM manipulation libary.  Its not a framework.',
+    date: "August 2, 2015"
+  }];
 
 
   this.memorizeArr = function() {
@@ -80,34 +102,6 @@ app.service('verseService', function($http, $q, fb) {
   this.toDeleteMem = function(index) {
     toMemorizeArr.splice(index, 1);
   }
-
-  var memorizedArr = [{
-    topic: 'Poetry',
-    reference: 'Two roads diverged in a wood, and I— I took the one less traveled by, And that has made all the difference. - Robert Frost',
-    date: "August 5, 2015"
-
-  }, {
-    topic: 'Inspiration',
-    reference: 'People will forget what you said, people will forget what you did, but people will never forget how you made them feel. - Maya Angelou',
-    date: "August 5, 2015"
-  }, {
-    topic: 'Angular JS',
-    reference: "Framework is the paradigm on how you organize your code.",
-    date: "August 4, 2015"
-  }, {
-    topic: 'Inspiration',
-    reference: 'The silence of the soul makes more distinct the voice of God. - Ellen White',
-    date: "August 2, 2015"
-  }, {
-    topic: 'Angular JS',
-    reference: 'Ng-click is a function that gets called when the user clicks',
-    date: "August 2, 2015"
-
-  }, {
-    topic: 'JQuery',
-    reference: 'JQuery is a DOM manipulation libary.  Its not a framework.',
-    date: "August 2, 2015"
-  }];
 
   this.memorized = function() {
     return memorizedArr;
