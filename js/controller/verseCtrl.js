@@ -1,23 +1,22 @@
 app.controller('verseCtrl', function($scope, verseService, $routeParams, $modal,
   $log, $firebaseArray, memRef) {
 
-  $scope.test = "Hello";
   //adding Firebase
-  // var ref = new Firebase("https://firstapp-janice.firebaseio.com");
-  //
-  // var verses = $firebaseArray(memRef);
-  //
-  // verses.$loaded().then(function(verses) {
-  //   console.log(verses);
-  // })
-  //
-  // $scope.typeToMemArr = function(verse) {
-  //     verses.$add({
-  //       theTypeVerse: verse
-  //     });
-  //     $scope.typeVerse = '';
-  //   }
-  //end firebase
+  var ref = new Firebase("https://firstapp-janice.firebaseio.com");
+
+  var verses = $firebaseArray(ref);
+
+  verses.$loaded().then(function(verses) {
+    console.log(verses);
+  })
+
+  $scope.typeToMemArr = function(verse) {
+      verses.$add({
+        theTypeVerse: verse
+      });
+      $scope.typeVerse = '';
+    }
+    //end firebase
 
   $scope.editorEnabled = false;
 
@@ -31,10 +30,10 @@ app.controller('verseCtrl', function($scope, verseService, $routeParams, $modal,
   //   verseService.addToMemArr($scope.typeVerse);
   // };
 
-  $scope.typeToMemArr = function(data) {
-    verseService.typeToMemArr(data);
-    $scope.typeVerse = '';
-  };
+  // $scope.typeToMemArr = function(data) {
+  //   verseService.typeToMemArr(data);
+  //   $scope.typeVerse = '';
+  // };
 
   $scope.memorizeArr = function() {
     $scope.toMemorizeArr = verseService.memorizeArr();

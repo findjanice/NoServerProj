@@ -6,7 +6,7 @@ app.service('dashboardService', function($http, $q) {
     '3. Pratice - out loud and eventually, without looking at the list.'
   ];
 
-  this.memoryTips = function() {
+    this.memoryTips = function() {
     return memoryTip;
   };
 
